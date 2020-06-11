@@ -1,7 +1,8 @@
 [![python](https://img.shields.io/badge/python-3.6+-blue.svg)
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2005.05005) 
 [![PWC](https://img.shields.io/badge/SOTA-Blind%20Face%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
-[![PWC](https://paperswithcode.com/paper/hifacegan-face-renovation-via-collaborative)
+[![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
+[![PWC](https://img.shields.io/badge/SOTA-Face%20Hallucination-blue)](https://paperswithcode.com/paper/hifacegan-face-renovation-via-collaborative)
 
 # Face-Renovation
 
