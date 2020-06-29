@@ -1,4 +1,4 @@
-[![python](https://img.shields.io/badge/python-3.6+-blue.svg)
+[![python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://github.com/Lotayou/Face-Renovation)
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2005.05005) 
 [![PWC](https://img.shields.io/badge/SOTA-Blind%20Face%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
 [![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
@@ -9,6 +9,22 @@
 **HiFaceGAN: Face Renovation via Collaborative Suppression and Replenishment**<br>
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
+
+# Update on 20200629
+### HiFaceGAN is not designed to create a perfect specimen out of you, but to bring out the best within you.
+
+Recently, there has been some [accusations](https://www.theverge.com/21298762/face-depixelizer-ai-machine-learning-tool-pulse-stylegan-obama-bias) towards a recent work [PULSE](https://github.com/adamian98/pulse) for turning a pixelated Obama figure into a white guy. This is, in my opinion, an honest mistake, and those who hold maliciously view against this normal academic accident is beyond my understanding. Yet the data distribution is not the primary cause, it is all down to the model design.
+
+To verify our point, we demonstrate how HiFaceGAN can faithfully preserve the person's identity, with a side-by-side comparison against PULSE over 13 famous colored people covering a wide spectrum of professional fields, including president(Barack Obama), actor(Morgan Freeman), athlete(Kobe Bryant), musician(Michael Jackson), model(Naomi Campbell), etc. Note that PULSE performs a spatial alignment before upsampling, so the results are all under the canonical pose regardless of the input.
+
+Over 13 testing samples, we observe 3 gender changes and 9 color-to-white cases for PULSE. In contrast, HiFaceGAN always preserves the input person's essential characteristics regardless of the gender, race and head pose of the input. 
+
+ **NOTE: Our HiFaceGAN is also trained on the gender-biased FFHQ dataset.**
+
+From left to right: Original image, 16x downsampled input, PULSE, our HiFaceGAN
+![black](https://user-images.githubusercontent.com/33449901/85966447-68d16900-b9f2-11ea-96c9-98501803da7e.jpg)
+
+
 ![Stunner](https://user-images.githubusercontent.com/33449901/82039922-47cde680-96d8-11ea-8d16-8158abb3eccf.jpg)
 
 Arxiv: https://arxiv.org/abs/2005.05005
