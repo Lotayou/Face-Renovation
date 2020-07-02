@@ -10,6 +10,12 @@
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
 
+###Update Plans
+- [x] Degradation script(20200702)
+- [ ] Evaluation metrics
+- [ ] Pretrained toy model on 16x face hallucination (test only)
+- [ ] Source code (subject to Alibaba corporate regulations)
+
 # Update on 20200629
 ### HiFaceGAN is not designed to create a perfect specimen out of you, but to bring out the best within you.
 
