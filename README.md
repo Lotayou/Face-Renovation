@@ -22,12 +22,12 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 
 
 # Contents
-0. [Usage](#Usage)
-1. [Benchmark Performances](#Benchmark Performances)
-2. [Remarks](#Remarks)
+0. [Usage](#usage)
+1. [Benchmark](#benchmark)
+2. [Remarks](#remarks)
 3. [License](#license)
 4. [Citation](#citation)
-5. [Acknowledgements](#Acknowledgements)
+5. [Acknowledgements](#acknowledgements)
 
 # Usage
 ### Environment
@@ -38,7 +38,7 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 - Data augmentation tool: [image_augmentor](https://pypi.org/project/image-augmentor/) or [albumentation](https://albumentations.readthedocs.io/en/latest/)
 
 ### Dataset Preparation
-Download [FFHQ](https://github.com/NVlabs/ffhq-dataset), resize to 512-by-512 and split id 65000~69999 for testing. We only use first 10000 images for training, which takes 2~3 days on a P100 GPU, training with full FFHQ is possible but not worth it.
+Download [FFHQ](https://github.com/NVlabs/ffhq-dataset), resize to 512x512 and split id `[65000, 70000)` for testing. We only use first 10000 images for training, which takes 2~3 days on a P100 GPU, training with full FFHQ is possible, but could take weeks.
 
 After that, run `degrade.py` to acquire paired images for training. You need to specify the degradation type and input root in the script first. 
 
@@ -53,7 +53,7 @@ python two_source_test.py  # Visualization of Fig 5
 ### Configurations
 All configurations are stored in `options/config_hifacegan.py`, the options are self-explanatory. 
 
-# Benchmark Performances
+# Benchmark
 Please refer to [benchmark.md](benchmark.md)
 
 # Remarks
