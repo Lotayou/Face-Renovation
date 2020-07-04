@@ -16,10 +16,7 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 
 ### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Materials(TODO)](https://arxiv.org/abs/2005.05005)
 
-#### Face Renovation is not designed to create a perfect specimen OUT OF you, but to bring out the best WITHIN you.
-
 ![Stunner](https://user-images.githubusercontent.com/33449901/82039922-47cde680-96d8-11ea-8d16-8158abb3eccf.jpg)
-
 
 # Contents
 0. [Usage](#usage)
@@ -35,12 +32,16 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 - PyTorch 1.0+
 - CUDA 10.1
 - python packages: opencv-python, tqdm, 
-- Data augmentation tool: [image_augmentor](https://pypi.org/project/image-augmentor/) or [albumentation](https://albumentations.readthedocs.io/en/latest/)
-
+- Data augmentation tool: [image_augmentor](https://pypi.org/project/image-augmentor/)
+- [Face Recognition Toolkit](https://github.com/ageitgey/face_recognition) for evaluation
+- [tqdm](https://github.com/tqdm/tqdm) to make you less anxious when testing:)
 ### Dataset Preparation
 Download [FFHQ](https://github.com/NVlabs/ffhq-dataset), resize to 512x512 and split id `[65000, 70000)` for testing. We only use first 10000 images for training, which takes 2~3 days on a P100 GPU, training with full FFHQ is possible, but could take weeks.
 
 After that, run `degrade.py` to acquire paired images for training. You need to specify the degradation type and input root in the script first. 
+
+### Configurations
+The configurations is stored in `options/config_hifacegan.py`, the options should be self-explanatory, but feel free to leave an issue anytime.
 
 ### Training and Testing
 ```
@@ -50,17 +51,28 @@ python test_nogt.py        # Test on real-world images
 python two_source_test.py  # Visualization of Fig 5
 ```
 
-### Configurations
-All configurations are stored in `options/config_hifacegan.py`, the options are self-explanatory. 
+### Evaluation
+Please find in `metrics_package` folder:
+- `main.py`: GPU-based PSNR, SSIM, MS-SSIM, FID
+- `face_dist.py`: CPU-based face embedding distance(FED) and landmark localization error (LLE). 
+- `PerceptualSimilarity\main.py`: GPU-based LPIPS
+- `niqe\niqe.py`: NIQE, CPU-based, no reference
+
+__Note:__
+- Read the scripts and modify result folder path(s) before testing (do not add `/` in the end), the results will be displayed on screen and saved in txt.
+- At least 10GB is required for `main.py`. If this is too heavy for you, reduce`bs=250` at [line 79](https://github.com/Lotayou/Face-Renovation/blob/5193b083f598a1291514ea3a4c2d77e1637ac2f6/metrics_package/main.py#L79)
+- Initializing Inception V3 Model for FID could take several minutes, just be patient. If you find a solution, please submit a PR.
+- By default `face_dist.py` script runs with 8 parallel subprocesses, which could cause error on certain environments. In that case, just disable the multiprocessing and replace with a for loop (This would take 2~3 hours for 5k images, you may want to wrap the loop in [tqdm](https://github.com/tqdm/tqdm) to reduce your anxiety).
 
 # Benchmark
-Please refer to [benchmark.md](benchmark.md)
+Please refer to [benchmark.md](benchmark.md) for benchmark experimental settings and performance comparison.
 
 # Remarks
+#### Face Renovation is not designed to create a perfect specimen OUT OF you, but to bring out the best WITHIN you.
 ### [The Philosophy of Face Renovation](goal.md) | [Understanding of HiFaceGAN](understanding.md)
 
 # License
-Copyright &copy; 2020, Alibaba Group. All rights reserved. This code is for academic and educational use only.
+Copyright &copy; 2020, Alibaba Group. All rights reserved. This code is intended for academic and educational use only, any commercial usage without authorization is strictly prohibited.
 
 # Citation
 Please kindly cite our paper when using this project for your research.
