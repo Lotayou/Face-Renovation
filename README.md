@@ -1,8 +1,12 @@
 [![python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://github.com/Lotayou/Face-Renovation)
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2005.05005) 
 [![PWC](https://img.shields.io/badge/SOTA-Blind%20Face%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
-[![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
+[![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Resolution-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
 [![PWC](https://img.shields.io/badge/SOTA-Face%20Hallucination-blue)](https://paperswithcode.com/paper/hifacegan-face-renovation-via-collaborative)
+
+<img src='https://user-images.githubusercontent.com/33449901/86509021-67030d80-be17-11ea-801d-5bb8b315ef56.png' align="right" width=360>
+
+<br><br><br><br>
 
 # Face-Renovation
 
@@ -10,62 +14,53 @@
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
 
-###Update Plans
-- [x] Degradation script(20200702)
-- [ ] Evaluation metrics
-- [ ] Pretrained toy model on 16x face hallucination (test only)
-- [ ] Source code (subject to Alibaba corporate regulations)
+### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Materials(TODO)](https://arxiv.org/abs/2005.05005)
 
-# Update on 20200629
-### HiFaceGAN is not designed to create a perfect specimen out of you, but to bring out the best within you.
-
-Recently, there has been some [accusations](https://www.theverge.com/21298762/face-depixelizer-ai-machine-learning-tool-pulse-stylegan-obama-bias) towards a recent work [PULSE](https://github.com/adamian98/pulse) for turning a pixelated Obama figure into a white guy. This is, in my opinion, an honest mistake, and those who hold maliciously view against this normal academic accident is beyond my understanding. Yet the data distribution is not the primary cause, it is all down to the model design.
-
-To verify our point, we demonstrate how HiFaceGAN can faithfully preserve the person's identity, with a side-by-side comparison against PULSE over 13 famous colored people covering a wide spectrum of professional fields, including president(Barack Obama), actor(Morgan Freeman), athlete(Kobe Bryant), musician(Michael Jackson), model(Naomi Campbell), etc. Note that PULSE performs a spatial alignment before upsampling, so the results are all under the canonical pose regardless of the input.
-
-Over 13 testing samples, we observe 3 gender changes and 9 color-to-white cases for PULSE. In contrast, HiFaceGAN always preserves the input person's essential characteristics regardless of the gender, race and head pose of the input. 
-
- **NOTE: Our HiFaceGAN is also trained on the gender-biased FFHQ dataset.**
-
-From left to right: Original image, 16x downsampled input, PULSE, our HiFaceGAN
-![black](https://user-images.githubusercontent.com/33449901/85966447-68d16900-b9f2-11ea-96c9-98501803da7e.jpg)
-
+#### Face Renovation is not designed to create a perfect specimen OUT OF you, but to bring out the best WITHIN you.
 
 ![Stunner](https://user-images.githubusercontent.com/33449901/82039922-47cde680-96d8-11ea-8d16-8158abb3eccf.jpg)
 
-Arxiv: https://arxiv.org/abs/2005.05005
-# Environment
+
+# Contents
+0. [Usage](#usage)
+1. [Benchmark](#benchmark)
+2. [Remarks](#remarks)
+3. [License](#license)
+4. [Citation](#citation)
+5. [Acknowledgements](#acknowledgements)
+
+# Usage
+### Environment
 - Ubuntu/CentOS
 - PyTorch 1.0+
 - CUDA 10.1
 - python packages: opencv-python, tqdm, 
 - Data augmentation tool: [image_augmentor](https://pypi.org/project/image-augmentor/) or [albumentation](https://albumentations.readthedocs.io/en/latest/)
 
-# Dataset Preparation
-Download [FFHQ]()
+### Dataset Preparation
+Download [FFHQ](https://github.com/NVlabs/ffhq-dataset), resize to 512x512 and split id `[65000, 70000)` for testing. We only use first 10000 images for training, which takes 2~3 days on a P100 GPU, training with full FFHQ is possible, but could take weeks.
 
-# Testing
-`python test.py`
+After that, run `degrade.py` to acquire paired images for training. You need to specify the degradation type and input root in the script first. 
 
-# Benchmark Performances
+### Training and Testing
+```
+python train.py            # A fool-proof training script
+python test.py             # Test on synthetic dataset
+python test_nogt.py        # Test on real-world images
+python two_source_test.py  # Visualization of Fig 5
+```
+
+### Configurations
+All configurations are stored in `options/config_hifacegan.py`, the options are self-explanatory. 
+
+# Benchmark
 Please refer to [benchmark.md](benchmark.md)
 
-# Academic Stuff
-### Motivation
-Image restoration has been well studied for decades, yet most existing research efforts are dedicated to specific degradation categories (as shown in the table above), leading to limited feasibility for real world cases with complex, heterogeneous degradations. 
-![teaser](https://user-images.githubusercontent.com/33449901/82056254-43afc200-96f4-11ea-95f3-09ba1f6b2bde.PNG)
+# Remarks
+### [The Philosophy of Face Renovation](goal.md) | [Understanding of HiFaceGAN](understanding.md)
 
-### Network Architecture
-
-![framework](https://user-images.githubusercontent.com/33449901/82056692-df413280-96f4-11ea-8cc0-b2f15b456bd0.PNG)
-
-Our network HiFaceGAN is composed of several nested __collaborative suppression and relenishment (CSR)__ units that each specializes in restoring a specific semantic aspects, leading to a systematic hierarchical face renovation, as displayed below. 
-In consequence, our dual-blind solution can even outperform SOTA blind face restoration with additional HQ reference [(GFRNet)](https://github.com/csxmli2016/GFRNet):
-
-![dual_vs_single_blind](https://user-images.githubusercontent.com/33449901/82056900-2d563600-96f5-11ea-891f-68b34430298c.PNG)
- 
 # License
-Copyright &copy; 2020, Alibaba Group. All rights reserved.
+Copyright &copy; 2020, Alibaba Group. All rights reserved. This code is for academic and educational use only.
 
 # Citation
 Please kindly cite our paper when using this project for your research.
