@@ -200,18 +200,18 @@ class HiFaceGANGenerator(SPADEGenerator):
             # downsampled segmentation map instead of random z
             self.fc = nn.Conv2d(self.opt.semantic_nc, 16 * nf, 3, padding=1)
 
-        self.head_0 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 768)
+        self.head_0 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 16 * nf)
 
-        self.G_middle_0 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 768)
-        self.G_middle_1 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 768)
+        self.G_middle_0 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 16 * nf)
+        self.G_middle_1 = SPADEResnetBlock(16 * nf, 16 * nf, opt, 16 * nf)
 
         # 20200211 test 4x with only 3 stage
 
         self.ups = nn.ModuleList([
-            SPADEResnetBlock(16 * nf, 8 * nf, opt, 384),
-            SPADEResnetBlock(8 * nf, 4 * nf, opt, 192),
-            SPADEResnetBlock(4 * nf, 2 * nf, opt, 96),
-            SPADEResnetBlock(2 * nf, 1 * nf, opt, 48)  # here
+            SPADEResnetBlock(16 * nf, 8 * nf, opt, 8 * nf),
+            SPADEResnetBlock(8 * nf, 4 * nf, opt, 4 * nf),
+            SPADEResnetBlock(4 * nf, 2 * nf, opt, 2 * nf),
+            SPADEResnetBlock(2 * nf, 1 * nf, opt, 1 * nf)  # here
             ])
 
         self.to_rgbs = nn.ModuleList([
