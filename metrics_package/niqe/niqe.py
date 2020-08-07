@@ -279,18 +279,8 @@ if __name__ == "__main__":
     #print('NIQE of ref parrot image is: %0.3f'% niqe(ref))
     #print('NIQE of dis parrot image is: %0.3f'% niqe(dis))
     '''
-    debug = [
-        #'/home/lingbo.ylb/projects/face_sr_sota/DeblurGANv2/results/FFHQ_3mix',
-        '/home/lingbo.ylb/projects/pg_spade_face_v4/results/conceptual_compression',
-    ]
     
     folders = [
-        # '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp',
-        # '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp-full','/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp_16x','/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp_3_stage(4x)',
-        # '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp_no_pg',
-        # '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_dixian.wp_mixed',
-        # '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_16x_contrasive_encoder', '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_16x_LIP_encoder',         '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_16x_subadd_encoder','/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_mixed_LIP_encoder',         '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_rand_down',         
-    
         # # wavelet
         # '/home/lingbo.ylb/projects/face_sr_sota/WaveletSRNet-master/results',
         # '/home/lingbo.ylb/projects/face_sr_sota/WaveletSRNet-master/results_16x_epoch30',
@@ -313,52 +303,10 @@ if __name__ == "__main__":
         '/home/lingbo.ylb/projects/face_sr_sota/RIDNet-master/TestCode/experiment/RIDNET_RNI15/results'
     ]
     
-    solvay = [
-        '/home/lingbo.ylb/projects/face_sr_sota/mmsr/results/RRDB_ESRGAN_x4/solvay_add',
-        '/home/lingbo.ylb/projects/face_sr_sota/ESRGAN/results/solvay_esrgan',
-        '/home/lingbo.ylb/projects/face_sr_sota/Super-FAN/solvay_superfan',
-        '/home/lingbo.ylb/projects/face_sr_sota/WaveletSRNet-master/solvay_sub',
-        '/home/lingbo.ylb/projects/pg_spade_face_v4/results/solvay_crops_mixed', 
-    ]
-    
-    additional = [#'/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_noise_LIP_encoder',
-    #'/home/lingbo.ylb/projects/face_sr_sota/WaveletSRNet-master/results_noise'
-    #'/home/lingbo.ylb/projects/face_sr_sota/DeblurGANv2/results/FFHQ_motion_blur'
-    #'/home/lingbo.ylb/projects/face_sr_sota/DeblurGAN/results'
-    #'/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_3mix_LIP_encoder',
-    #'/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_motion_blur_LIP_encoder',
-    #'/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_16x_spade',
-    '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_16x_LIP_encoder_L1_loss',
-    #'/home/lingbo.ylb/projects/face_sr_sota/PyTorch-ARCNN/results'
-    ]
-    
-    three_mix = [ 
-        '/home/lingbo.ylb/projects/face_sr_sota/Super-FAN/results_3mix',
-        '/home/lingbo.ylb/projects/face_sr_sota/mmsr/results/RRDB_ESRGAN_x4/FFHQ_3mix',
-        '/home/lingbo.ylb/projects/face_sr_sota/WaveletSRNet-master/results_3mix',
-        '/home/lingbo.ylb/projects/face_sr_sota/DeblurGANv2/results/FFHQ_3mix',
-        '/home/lingbo.ylb/projects/face_sr_sota/PyTorch-ARCNN/FFHQ_3mix',
-        '/home/lingbo.ylb/projects/pg_spade_face_v4/results/face_enhan_lingbo.ylb_3mix_LIP_encoder'
-    ]
-    
-    HEVC = [
-        '/home/lingbo.ylb/datasets/FFHQ_yuv_recon/37',
-        '/home/lingbo.ylb/datasets/FFHQ_yuv_recon/42',
-        '/home/lingbo.ylb/datasets/FFHQ_yuv_recon/45',
-        '/home/lingbo.ylb/datasets/FFHQ_yuv_recon/47',
-        '/home/lingbo.ylb/datasets/FFHQ_yuv_recon/50',
-    ]
-    
-    #cyka = '/home/lingbo.ylb/datasets/FFHQ_degrade_512_test_GT'
-    #main_process(cyka)
     f = open('hevc_niqe.txt', 'a+')
     # f.write('Real NIQE: 7.795504\n')
     
-    #for folder in folders:
-    #for folder in solvay:
-    #for folder in additional:
-    #for folder in three_mix:
-    for folder in HEVC:
+    for folder in folders:
         mean_niqe = main_process(folder)
         f.write('%s: %.6f\n' % (folder, mean_niqe))
         f.flush()
