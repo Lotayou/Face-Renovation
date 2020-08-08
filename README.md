@@ -14,7 +14,7 @@
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
 
-### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Materials(TODO)](https://arxiv.org/abs/2005.05005)
+### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
 
 ### Update: This paper is accepted at ACM Multimedia 2020.
 
@@ -68,6 +68,10 @@ __Note:__
 
 # Benchmark
 Please refer to [benchmark.md](benchmark.md) for benchmark experimental settings and performance comparison.
+
+__Memory Cost__ The default model is designed to fit in a P100 card with 16 GB memory. For Titan-X or 1080Ti card with 12 GB memory, you can reduce `ngf=48`, or further turn `batchSize=1` without significant performance drop.
+
+__Inference Speed__ Currently the inference script is single-threaded which runs at 5fps. To further increase the inference speed, possible options are using multi-thread dataloader, batch inference, and combine normalization and convolution operations.
 
 # Remarks
 #### Face Renovation is not designed to create a perfect specimen OUT OF you, but to bring out the best WITHIN you.
