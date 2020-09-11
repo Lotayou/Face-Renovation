@@ -4,7 +4,7 @@
 [![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Resolution-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
 [![PWC](https://img.shields.io/badge/SOTA-Face%20Hallucination-blue)](https://paperswithcode.com/paper/hifacegan-face-renovation-via-collaborative)
 
-<img src='https://user-images.githubusercontent.com/33449901/86509021-67030d80-be17-11ea-801d-5bb8b315ef56.png' align="right" width=360>
+<img src='https://user-images.githubusercontent.com/33449901/92845327-6c816300-f419-11ea-9b03-67d29a179edf.gif' align="right" width=512>
 
 <br><br><br><br>
 
@@ -16,6 +16,7 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 
 ### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
 
+### Update 20200911: Please find video restoration results at [this repo](https://github.com/Lotayou/Face-Renovation-teaser-gifs)!
 ### Update: This paper is accepted at ACM Multimedia 2020.
 
 ![Stunner](https://user-images.githubusercontent.com/33449901/82039922-47cde680-96d8-11ea-8d16-8158abb3eccf.jpg)
