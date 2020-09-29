@@ -1,8 +1,7 @@
 [![python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://github.com/Lotayou/Face-Renovation)
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2005.05005) 
-[![PWC](https://img.shields.io/badge/SOTA-Blind%20Face%20Restoration-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
-[![PWC](https://img.shields.io/badge/SOTA-Image%20Super%20Resolution-blue)](https://github.com/Lotayou/Face-Renovation/blob/master/benchmark.md)
-[![PWC](https://img.shields.io/badge/SOTA-Face%20Hallucination-blue)](https://paperswithcode.com/paper/hifacegan-face-renovation-via-collaborative)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hifacegan-face-renovation-via-collaborative/image-super-resolution-on-ffhq-1024-x-1024-4x)](https://paperswithcode.com/sota/image-super-resolution-on-ffhq-1024-x-1024-4x?p=hifacegan-face-renovation-via-collaborative)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hifacegan-face-renovation-via-collaborative/image-super-resolution-on-ffhq-256-x-256-4x)](https://paperswithcode.com/sota/image-super-resolution-on-ffhq-256-x-256-4x?p=hifacegan-face-renovation-via-collaborative)[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hifacegan-face-renovation-via-collaborative/face-hallucination-on-ffhq-512-x-512-16x)](https://paperswithcode.com/sota/face-hallucination-on-ffhq-512-x-512-16x?p=hifacegan-face-renovation-via-collaborative)
 
 <img src='https://user-images.githubusercontent.com/33449901/92845327-6c816300-f419-11ea-9b03-67d29a179edf.gif' align="right" width=512>
 
