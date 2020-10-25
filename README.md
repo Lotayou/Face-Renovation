@@ -83,11 +83,10 @@ Copyright &copy; 2020, Alibaba Group. All rights reserved. This code is intended
 # Citation
 Please kindly cite our paper when using this project for your research.
 ```
-@journal{Yang2020HiFaceGANFR,
+@article{Yang2020HiFaceGANFR,
   title={HiFaceGAN: Face Renovation via Collaborative Suppression and Replenishment},
-  author={Lingbo Yang and Chang Liu and Pan Wang and Shanshe Wang and Peiran Ren and Siwei Ma and Wen Gao},
-  journal={Arxiv},
-  url={https://arxiv.org/abs/2005.05005},
+  author={Lingbo Yang and C. Liu and P. Wang and Shanshe Wang and P. Ren and Siwei Ma and W. Gao},
+  journal={Proceedings of the 28th ACM International Conference on Multimedia},
   year={2020}
 }
 ```
