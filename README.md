@@ -13,8 +13,9 @@
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
 
-### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
+### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [ACM link](https://dl.acm.org/doi/abs/10.1145/3394171.3413965)| [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
 
+### Update 20201026: Pretrained checkpoints released to facilitate reproduction.
 ### Update 20200911: Please find video restoration results at [this repo](https://github.com/Lotayou/Face-Renovation-teaser-gifs)!
 ### Update: This paper is accepted at ACM Multimedia 2020.
 
@@ -54,7 +55,17 @@ python two_source_test.py  # Visualization of Fig 5
 ```
 
 ### Pretrained Models
-[valid-until 2020/10/29 9:19 UTF+8 Beijing time](https://ws28.cn/f/3tw3bit6qks)
+
+Download, unzip and put under `./checkpoints`. Then change names in configuration file accordingly.
+
+[BaiduNetDisk](https://pan.baidu.com/s/15_vhGQdkHIfLCRgo7xanpg): Extraction code：cxp0
+
+#### Note: 
+- These checkpoints works best on synthetic degradation prescribed in `degrade.py`, don't expect them to handle real-world LQ face images. You can try to fine-tune them with additional collected samples though. 
+- There are two `face_renov` checkpoints trained under different degradation mixtures. Unfortunately I've forgot which one I used for our paper, so just try both and select the better one. Also, this could give you a hint about how our model behaves under a different degradation setting:)  
+- You may need to set `netG=lipspade` and `ngf=48` inside the configuration file. In case of loading failure, don't hesitate to submit a issue or email me.
+
+
 
 ### Evaluation
 Please find in `metrics_package` folder:
