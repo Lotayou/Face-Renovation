@@ -53,6 +53,9 @@ python test_nogt.py        # Test on real-world images
 python two_source_test.py  # Visualization of Fig 5
 ```
 
+### Pretrained Models
+[valid-until 2020/10/29 9:19 UTF+8 Beijing time](https://ws28.cn/f/3tw3bit6qks)
+
 ### Evaluation
 Please find in `metrics_package` folder:
 - `main.py`: GPU-based PSNR, SSIM, MS-SSIM, FID
