@@ -35,7 +35,7 @@ Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br
 - PyTorch 1.0+
 - CUDA 10.1
 - python packages: opencv-python, tqdm, 
-- Data augmentation tool: [image_augmentor](https://pypi.org/project/image-augmentor/)
+- Data augmentation tool: [imgaug](https://imgaug.readthedocs.io/en/latest/source/installation.html#installation-in-pip)
 - [Face Recognition Toolkit](https://github.com/ageitgey/face_recognition) for evaluation
 - [tqdm](https://github.com/tqdm/tqdm) to make you less anxious when testing:)
 ### Dataset Preparation
