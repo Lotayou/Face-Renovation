@@ -93,7 +93,7 @@ __Inference Speed__ Currently the inference script is single-threaded which runs
 ### [The Philosophy of Face Renovation](goal.md) | [Understanding of HiFaceGAN](understanding.md)
 
 # License
-Copyright &copy; 2020, Alibaba Group. All rights reserved. This code is intended for academic and educational use only, any commercial usage without authorization is strictly prohibited.
+This code is intended for academic and educational use only, any commercial usage without authorization is strictly prohibited.
 
 # Citation
 Please kindly cite our paper when using this project for your research.
