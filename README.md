@@ -58,6 +58,9 @@ python two_source_test.py  # Visualization of Fig 5
 
 Download, unzip and put under `./checkpoints`. Then change names in configuration file accordingly.
 
+[BaiduNetDisk](https://pan.baidu.com/s/15_vhGQdkHIfLCRgo7xanpg): Extraction code：cxp0
+
+[YandexDisk](https://yadi.sk/d/Pl_hxVZPa_PHew)
 
 #### Note: 
 - These checkpoints works best on synthetic degradation prescribed in `degrade.py`, don't expect them to handle real-world LQ face images. You can try to fine-tune them with additional collected samples though. 
