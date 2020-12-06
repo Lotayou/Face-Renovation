@@ -13,7 +13,7 @@
 
 Lingbo Yang, Chang Liu, Pan Wang, Shanshe Wang, Peiran Ren, Siwei Ma, Wen Gao<br>
 
-### [Project](https://github.com/Lotayou/Face-Renovation) | [arXiv](https://arxiv.org/abs/2005.05005) | [ACM link](https://dl.acm.org/doi/abs/10.1145/3394171.3413965)| [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
+### [Project](https://lotayou.github.io/projects/face_renov.html) | [arXiv](https://arxiv.org/abs/2005.05005) | [ACM link](https://dl.acm.org/doi/abs/10.1145/3394171.3413965)| [Supplementary Material](https://github.com/Lotayou/lotayou.github.io/raw/master/396_Face_Renovation_supplementary.pdf)
 
 ### Update 20201026: Pretrained checkpoints released to facilitate reproduction.
 ### Update 20200911: Please find video restoration results at [this repo](https://github.com/Lotayou/Face-Renovation-teaser-gifs)!
